@@ -1,1 +1,1 @@
-# SQL I: Day 4 
+# SQL I: Day 4
