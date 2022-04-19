@@ -1,0 +1,8 @@
+-- 1581
+-- https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/
+
+SELECT V.CUSTOMER_ID, COUNT(V.CUSTOMER_ID) 
+AS COUNT_NO_TRANS FROM VISITS AS V LEFT JOIN 
+TRANSACTIONS AS T ON T.VISIT_ID = V.VISIT_ID
+WHERE T.TRANSACTION_ID IS NULL 
+GROUP BY V.CUSTOMER_ID;
