@@ -1,5 +1,5 @@
--- 1148
--- https://leetcode.com/problems/article-views-i/
+-- 1729
+-- https://leetcode.com/problems/find-followers-count/
 
-SELECT DISTINCT(AUTHOR_ID) AS ID FROM VIEWS
-WHERE AUTHOR_ID = VIEWER_ID ORDER BY ID;
+SELECT USER_ID, COUNT(FOLLOWER_ID) AS FOLLOWERS_COUNT
+FROM FOLLOWERS GROUP BY USER_ID ORDER BY USER_ID;
