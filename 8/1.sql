@@ -1,7 +1,5 @@
--- 1141
--- https://leetcode.com/problems/user-activity-for-the-past-30-days-i/
+-- 586
+-- https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/
 
-SELECT ACTIVITY_DATE AS DAY, COUNT(DISTINCT(USER_ID)) 
-AS ACTIVE_USERS FROM ACTIVITY WHERE ACTIVITY_DATE <= "2019-07-27"
-AND ACTIVITY_DATE > DATE_SUB("2019-07-27", INTERVAL 30 DAY)
-GROUP BY ACTIVITY_DATE;
+SELECT CUSTOMER_NUMBER FROM ORDERS GROUP BY CUSTOMER_NUMBER 
+ORDER BY COUNT(ORDER_NUMBER) DESC LIMIT 1;
