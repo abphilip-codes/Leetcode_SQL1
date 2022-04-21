@@ -1,5 +1,5 @@
--- 1890
--- https://leetcode.com/problems/the-latest-login-in-2020/
+-- 1158
+-- https://leetcode.com/problems/market-analysis-i/
 
 SELECT USER_ID, MAX(TIME_STAMP) AS LAST_STAMP
 FROM LOGINS WHERE YEAR(TIME_STAMP) = 2020

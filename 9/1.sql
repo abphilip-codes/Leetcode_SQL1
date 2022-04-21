@@ -1,5 +1,9 @@
--- 586
--- https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/
+-- 1393
+-- https://leetcode.com/problems/capital-gainloss/
 
-SELECT CUSTOMER_NUMBER FROM ORDERS GROUP BY CUSTOMER_NUMBER 
-ORDER BY COUNT(ORDER_NUMBER) DESC LIMIT 1;
+SELECT STOCK_NAME, SUM(CASE
+    WHEN OPERATION = "BUY"
+    THEN PRICE*(-1) 
+    ELSE PRICE END
+) AS CAPITAL_GAIN_LOSS FROM
+STOCKS GROUP BY STOCK_NAME
