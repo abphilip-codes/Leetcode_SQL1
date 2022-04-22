@@ -1,0 +1,9 @@
+-- 1393
+-- https://leetcode.com/problems/capital-gainloss/
+
+SELECT STOCK_NAME, SUM(CASE
+    WHEN OPERATION = "BUY"
+    THEN PRICE*(-1) 
+    ELSE PRICE END
+) AS CAPITAL_GAIN_LOSS FROM
+STOCKS GROUP BY STOCK_NAME;
