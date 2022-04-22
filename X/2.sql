@@ -1,7 +1,6 @@
--- 1407
--- https://leetcode.com/problems/top-travellers/
+-- 1050
+-- https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/
 
-SELECT U.NAME, IFNULL(SUM(R.DISTANCE),0) AS
-TRAVELLED_DISTANCE FROM USERS AS U LEFT JOIN 
-RIDES AS R ON U.ID = R.USER_ID GROUP BY U.NAME 
-ORDER BY TRAVELLED_DISTANCE DESC, U.NAME;
+SELECT ACTOR_ID, DIRECTOR_ID FROM ACTORDIRECTOR
+GROUP BY ACTOR_ID, DIRECTOR_ID
+HAVING COUNT(*) >= 3;
